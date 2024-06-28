@@ -70,19 +70,21 @@ def show_therapists():
 
 
 def show_patients():
-    st.write('Estatísticas de terapeutas')
+    st.write('Estatísticas de pacientes')
     account_service = AccountsService()
     patients = account_service.get_patients()
     patient_stats = account_service.get_account_stats()
     col1, col2 = st.columns(2)
+    by_psyco_df = pd.DataFrame(patient_stats['patient_by_psyco'])
+    by_psyco_df['psychiatric'] = by_psyco_df['psychiatric'].map({True: 'Sim', False: 'Não'})
 
     if patients:
         with col1:
             fig = px.pie(
-                patient_stats['patient_by_psyco'],
+                by_psyco_df,
                 values='count',
                 names='psychiatric',
-                title='Porcentagem de pacientes com acompanhamento psiquiátrico'
+                title='Porcentagem de pacientes com<br>acompanhamento psiquiátrico'
             )
             st.plotly_chart(fig)
         with col2:

@@ -21,7 +21,7 @@ def show_treatments():
         st.markdown(card_html, unsafe_allow_html=True)
     col1, col2 = st.columns(2)
     with col1:
-        create_card('Tratamentos em andamento', treatments_stats['ongoing_treatments'])
+        pass
     with col2:
         pass
     if treatments:

@@ -23,7 +23,6 @@ def show_calendars():
         calendars_df = calendars_df.rename(columns=column_names)
         AgGrid(
             data=pd.DataFrame(calendars_df),
-            reload_data=True,
             key='calendars_grid'
         )
     else:

@@ -39,7 +39,6 @@ def show_treatments():
         treatments_df = treatments_df.rename(columns=column_names)
         AgGrid(
             data=pd.DataFrame(treatments_df),
-            reload_data=True,
             key='treatments_grid'
         )
     else:

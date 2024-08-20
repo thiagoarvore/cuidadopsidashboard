@@ -62,7 +62,6 @@ def show_therapists():
         therapists_df = therapists_df.rename(columns=column_names)
         AgGrid(
             data=pd.DataFrame(therapists_df),
-            reload_data=True,
             key='therapist_grid'
         )
     else:

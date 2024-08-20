@@ -31,7 +31,7 @@ def show_home():
         with st.container():
             create_card('Total de Terapeutas cadastrados', f'{account_stats["total_therapist_accounts"]}')
         with st.container():
-            create_card('Total de horários disponíveis', f'{calendar_stats["total_calendars"]}')
+            create_card('Total de horários disponíveis', f'{calendar_stats["total_active_calendars"]}')
 
     with col2:
         with st.container():

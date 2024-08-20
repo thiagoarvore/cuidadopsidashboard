@@ -112,7 +112,6 @@ def show_patients():
         patients_df = patients_df.rename(columns=column_names)
         AgGrid(
             data=pd.DataFrame(patients_df),
-            reload_data=True,
             key='patients_grid'
         )
     else:
